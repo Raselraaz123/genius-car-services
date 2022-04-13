@@ -5,6 +5,7 @@
   box-shadow: 7px 7px 10px gainsboro;
 
 
+
 }
 .service img{
 width: 100%;
@@ -17,6 +18,10 @@ width: 100%;
   font-weight: 600;
   border: none;
   background-color: rgb(170, 243, 219);
+
+
+
+
 }
 .btn-book:hover{
   color: rgb(0, 8, 8);

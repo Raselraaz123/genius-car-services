@@ -1,8 +1,11 @@
+.register-form{
+width: 50%;
+margin: 0px auto;
+}
 .register-form form{
 display: flex;
 flex-direction: column;
-width: 50%;
-margin: 0px auto;
+
 }
 .register-form input{
   padding: 5px 5px;

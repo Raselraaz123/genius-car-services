@@ -1,17 +1,30 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import './Register.css'
+import auth from '../../../firebase.init';  
+import SocialLogin from '../SocialLogin/SocialLogin';
+
+
 const Register = () => {
+const [createUserWithEmailAndPassword, user, loading, error] =
+  useCreateUserWithEmailAndPassword(auth);
+
  const navigate = useNavigate();
 
-    const navigateLogin = (event) => {
+    const navigateLogin = () => {
       navigate("/login");
+    
   };
+    if (user) {
+      navigate("/home");
+    }
   const handleSubmitRegisterForm = event => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
+    createUserWithEmailAndPassword(email, password);
   }
   return (
     <div className="register-form ">
@@ -44,6 +57,7 @@ const Register = () => {
           Please Login
         </Link>
       </p>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };

@@ -10,7 +10,9 @@ flex-direction: column;
 .register-form input{
   padding: 5px 5px;
   margin-bottom: 10px;
+  border: 1px solid lightgrey;
   border-radius:5px ;
   font-size: 18px;
   font-weight: 500;
+  
 }

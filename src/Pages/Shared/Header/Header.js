@@ -12,12 +12,21 @@ const Header = () => {
   }
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        sticky="top"
+        bg="primary"
+        variant="dark"
+      >
         <Container>
-          <Navbar.Brand as={Link} to="/"><img src={logo} height="35px" alt="" /></Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            <img src={logo} height="35px" alt="" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link href="home">Home</Nav.Link>
               <Nav.Link href="home#services">Services</Nav.Link>
               <Nav.Link href="home#experts">Experts</Nav.Link>
               <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
@@ -35,14 +44,31 @@ const Header = () => {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
-              {
-                user ?
-                  <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign out</button>
-                  :
+              <Nav.Link as={Link} to="/about">
+                About
+              </Nav.Link>
+              {user && (
+                <>
+                  <Nav.Link as={Link} to="/addservice">
+                 Add service
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/manage">
+                    Manage
+                  </Nav.Link>
+                </>
+              )}
+              {user ? (
+                <button
+                  className="btn btn-link text-white text-decoration-none"
+                  onClick={handleSignOut}
+                >
+                  Sign out
+                </button>
+              ) : (
                 <Nav.Link as={Link} to="login">
-              Login
-              </Nav.Link>}
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

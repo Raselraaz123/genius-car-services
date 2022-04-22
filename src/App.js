@@ -12,6 +12,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Checkout from './Pages/Checkout/Checkout/Checkout';
 import RequierAuth from './Pages/Login/RequierAuth/RequierAuth';
+import AddService from './Pages/AddService/AddService';
+import ManageServices from './Pages/ManageServices/ManageServices';
 
 
 function App() {
@@ -33,6 +35,22 @@ function App() {
           element={
             <RequierAuth>
               <Checkout></Checkout>
+            </RequierAuth>
+          }
+        ></Route>
+        <Route
+          path="/addservice"
+          element={
+            <RequierAuth>
+         <AddService></AddService>
+            </RequierAuth>
+          }
+        ></Route>
+        <Route
+          path="/manage"
+          element={
+            <RequierAuth>
+         <ManageServices></ManageServices>
             </RequierAuth>
           }
         ></Route>

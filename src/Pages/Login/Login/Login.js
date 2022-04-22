@@ -7,8 +7,10 @@ import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
  import { ToastContainer, toast } from "react-toastify";
  import "react-toastify/dist/ReactToastify.css";
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Login = () => {
+  
   const emailRef = useRef('');
   const passwordRef = useRef('');
   const navigate = useNavigate();
@@ -61,6 +63,7 @@ signInWithEmailAndPassword(email, password);
   }
   return (
     <div className="w-50 mx-auto">
+      <PageTitle title="Login"></PageTitle>
       <h2 className="text-center mt-3 text-primary">Please Login</h2>
       <Form onSubmit={handleSubmitForm}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -105,7 +108,6 @@ signInWithEmailAndPassword(email, password);
       <p className="text-center">
         Forget Password ?
         <button
-         
           className="btn btn-link text-primary pe-auto text-decoration-none "
           onClick={ResetPassword}
         >
